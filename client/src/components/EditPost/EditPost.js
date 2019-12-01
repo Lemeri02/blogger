@@ -12,6 +12,7 @@ export class AddPost extends Component {
 
       this.titleInput = React.createRef();
       this.textInput = React.createRef();
+      this.categoriesInput = React.createRef();
   }
 
   componentDidMount(){
@@ -24,12 +25,13 @@ export class AddPost extends Component {
     const id = this.props.match.params.id;
     this.props.editPost(id, {
         title: this.titleInput.current.value,
-        text: this.textInput.current.value
+        text: this.textInput.current.value,
+        categories: this.categoriesInput.current.value,
     }, this.props.history);
   }
 
   render() {
-    const { post} = this.props;
+    const { post } = this.props;
 
     if(!post) {
         return <Spinner />
@@ -49,9 +51,16 @@ export class AddPost extends Component {
 
           <div className="form-group">
             <label htmlFor="text">Пост</label>
-            <input 
+            <textarea 
             ref={this.textInput}
             type="text" defaultValue={post.text} className="form-control" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="text">Категория</label>
+            <input 
+            ref={this.categoriesInput}
+            type="text" defaultValue={post.categories} className="form-control" />
           </div>
 
           <button type="submit" className="btn btn-primary">Редактировать</button>

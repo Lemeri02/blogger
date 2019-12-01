@@ -21,7 +21,7 @@ export class AddPost extends Component {
   }
 
   render() {
-    const { title, text } = this.state;
+    const { title, text, categories } = this.state;
 
     return (
         <form onSubmit={this.onSubmit}>
@@ -36,6 +36,11 @@ export class AddPost extends Component {
           <div className="form-group">
             <label htmlFor="text">Пост</label>
             <textarea type="text" value={text} onChange={this.onChange} name="text" className="form-control" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="text">Категория</label>
+            <input type="text" value={categories} onChange={this.onChange} name="categories" className="form-control" />
           </div>
 
           <button type="submit" className="btn btn-outline-success">Отправить</button>

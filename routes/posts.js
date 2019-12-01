@@ -59,6 +59,7 @@ router.post(
     let newPost = new Posts({
       title: req.body.title,
       text: req.body.text,
+      categories: req.body.categories,
       author: req.user
     });
 
@@ -94,7 +95,8 @@ router.put(
           {
             $set: {
               title: req.body.title,
-              text: req.body.text
+              text: req.body.text,
+              categories: req.body.categories,
             }
           },
           {

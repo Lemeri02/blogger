@@ -13,6 +13,7 @@ export class Post extends Component {
         <div className="card-body">
           <h1>{post.title}</h1>
           <p>{this.shortText(post.text)}</p>
+          <p className="text-muted">Категория: {post.categories}</p>
           <Link to={`/post/${post._id}`} className="btn btn-outline-success">Подробнее</Link>
         </div>
       </div>

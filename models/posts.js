@@ -7,6 +7,9 @@ const Posts = new mongoose.Schema({
   text: {
     type: String
   },
+  categories: {
+    type: String
+  },
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "users"

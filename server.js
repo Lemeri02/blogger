@@ -52,6 +52,6 @@ if (dev) {
   });
 
   app.listen(process.env.PORT || PORT, () => {
-    console.log(`Server started on 80 PORT.`);
+    console.log(`Server started...`);
   });
 }

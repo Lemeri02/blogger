@@ -35,6 +35,8 @@ export class PostPage extends Component {
 
           <p>{post.text}</p>
 
+          <p className="text-muted">Категория: {post.categories}</p>
+
           {user && user.id === post.author._id ? (
             <div className="mb-5">
               <button onClick={this.deletePost} className="btn btn-outline-danger mr-3" >Удалить</button>
