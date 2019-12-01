@@ -7,9 +7,9 @@ export class Navbar extends Component {
     const { user } = this.props;
 
     return (
-      <nav className="navbar navbar-expand-md navbar-dark bg-primary mb-3">
+      <nav className="navbar navbar-expand-md navbar-light bg-light mb-3">
         <div className="container">
-          <Link to="/" className="navbar-brand">React Blog</Link>
+          <Link to="/" className="navbar-brand mb-0 h1">BLOGGER</Link>
 
           <button 
           className="navbar-toggler"
@@ -25,7 +25,7 @@ export class Navbar extends Component {
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link to="/add" className="nav-link">Добавить пост</Link>
+                <Link to="/add" className="nav-link ">Добавить пост</Link>
               </li>
             </ul>
 

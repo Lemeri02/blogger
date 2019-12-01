@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 // App config
 const dev = process.env.NODE_ENV !== "production";
 const config = require("./configs/config");
-const port = 8000;
+const PORT = 8000;
 const app = express();
 
 // MongoDB
@@ -43,15 +43,15 @@ app.use("/api/users", require("./routes/users"));
 
 // Start server
 if (dev) {
-  app.listen(port, () => {
-    console.log(`Server started on ${port} port.`);
+  app.listen(PORT, () => {
+    console.log(`Server started on ${PORT} PORT.`);
   });
 } else {
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 
-  app.listen(80, () => {
-    console.log(`Server started on 80 port.`);
+  app.listen(process.env.PORT || PORT, () => {
+    console.log(`Server started on 80 PORT.`);
   });
 }

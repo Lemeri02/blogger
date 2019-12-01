@@ -8,6 +8,7 @@ import Login from './Login/Login'
 import Logout from './Logout/Logout'
 import PostPage from './PostPage/PostPage'
 import AddPost from './AddPost/AddPost'
+import EditPost from './EditPost/EditPost'
 
 
 export class App extends Component {
@@ -23,6 +24,7 @@ export class App extends Component {
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/post/:id" component={PostPage} />
             <Route exact path="/add" component={AddPost} />
+            <Route exact path="/edit/:id" component={EditPost} />
             <Route path="/" component={NotFound} />
           </Switch>
         </div>

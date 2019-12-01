@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import {addPost } from '../../store/actions/postActions'
+import Helmet from 'react-helmet'
 
+import withAuth from '../../hocs/withAuth'
 export class AddPost extends Component {
   state = {
     title: "",
@@ -13,7 +17,7 @@ export class AddPost extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state)
+    this.props.addPost(this.state, this.props.history);
   }
 
   render() {
@@ -21,6 +25,9 @@ export class AddPost extends Component {
 
     return (
         <form onSubmit={this.onSubmit}>
+        <Helmet>
+          <title>Blogger - Добавить пост</title>
+        </Helmet>
           <div className="form-group">
             <label htmlFor="title">Название</label>
             <input type="text" value={title} onChange={this.onChange} name="title" className="form-control" />
@@ -28,13 +35,13 @@ export class AddPost extends Component {
 
           <div className="form-group">
             <label htmlFor="text">Пост</label>
-            <input type="text" value={text} onChange={this.onChange} name="text" className="form-control" />
+            <textarea type="text" value={text} onChange={this.onChange} name="text" className="form-control" />
           </div>
 
-          <button type="submit" className="btn btn-primary">Отправить</button>
+          <button type="submit" className="btn btn-outline-success">Отправить</button>
         </form>
     )
   }
 }
 
-export default AddPost
+export default  withAuth(connect(null, {addPost})(AddPost));

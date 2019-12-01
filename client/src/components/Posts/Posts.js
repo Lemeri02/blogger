@@ -6,6 +6,7 @@ import { getPosts } from '../../store/actions/postActions'
 import Spinner from '../Spinner/Spinner'
 
 import Post from '../Post/Post'
+import Helmet from 'react-helmet'
 
 export class Posts extends Component {
   componentDidMount() {
@@ -22,6 +23,10 @@ export class Posts extends Component {
     }
     return (
       <div>
+        <Helmet>
+          <title>Blogger - Главная страница </title>
+        </Helmet>
+
         {
           posts.map(post => {
           return <Post key={post._id} post={post} />

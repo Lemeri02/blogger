@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { registerUser } from '../../store/actions/authActions'
 import { clearErrors } from '../../store/actions/errorActions'
+import Helmet from 'react-helmet'
 
 export class Register extends Component {
   state = {
@@ -41,6 +42,9 @@ export class Register extends Component {
 
     return (
       <div className="row">
+        <Helmet>
+          <title>Blogger - Регистрация</title>
+        </Helmet>
         <form className="card p-3 mx-auto col-md-5" onSubmit={this.onSubmit}>
           <h2 className="text-center">Регистрация</h2>
          
@@ -68,7 +72,7 @@ export class Register extends Component {
             {errors.password2 && (<div className="text-danger">{errors.password2}</div>)}
           </div>
 
-          <button type="submit" className="btn btn-primary btn-lg">Зарегистрироваться</button>
+          <button type="submit" className="btn btn-outline-success btn-lg">Зарегистрироваться</button>
         </form>
       </div>
     )

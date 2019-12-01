@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { loginUser } from '../../store/actions/authActions'
 import { clearErrors } from '../../store/actions/errorActions'
+import Helmet from 'react-helmet'
 
 export class Login extends Component {
   state = {
@@ -39,6 +40,9 @@ export class Login extends Component {
 
     return (
       <div className="row">
+        <Helmet>
+          <title>Blogger - Вход</title>
+        </Helmet>
         <form className="card p-3 mx-auto col-md-5" onSubmit={this.onSubmit}>
           <h2 className="text-center">Вход</h2>
           <div className="form-group">
@@ -53,7 +57,7 @@ export class Login extends Component {
             {errors.password && (<div className="text-danger">{errors.password}</div>)}
           </div>
 
-          <button type="submit" className="btn btn-primary btn-lg">Войти</button>
+          <button type="submit" className="btn btn-outline-success btn-lg">Войти</button>
         </form>
       </div>
     )
