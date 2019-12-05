@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import logo from './logo1.png'
 
 export class Navbar extends Component {
   render() {
@@ -9,7 +10,12 @@ export class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-md navbar-light bg-light mb-3">
         <div className="container">
-          <Link to="/" className="navbar-brand mb-0 h1">BLOGGER</Link>
+          <Link to="/" className="navbar-brand mb-0"> <img src={logo} alt="logo" style={{
+          display: "block",
+          margin: "auto",
+          width: "200px"
+        }}/></Link>
+       
 
           <button 
           className="navbar-toggler"
@@ -22,7 +28,7 @@ export class Navbar extends Component {
             <span className="navbar-toggler-icon" />
           </button>
 
-          <div className="collapse navbar-collapse">
+          <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link to="/add" className="nav-link ">Добавить пост</Link>
