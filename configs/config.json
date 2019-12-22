@@ -1,4 +1,4 @@
 {
-  "mongoURL": "mongodb+srv://MyAdminUser:kAt9iTcSwJ9ELfEG@cluster0-psx8t.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURL": "mongodb",
   "key": "mYsecreTkeY"
 }
