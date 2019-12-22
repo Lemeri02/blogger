@@ -63,7 +63,7 @@ export class AddPost extends Component {
             type="text" defaultValue={post.categories} className="form-control" />
           </div>
 
-          <button type="submit" className="btn btn-primary">Редактировать</button>
+          <button type="submit" className="btn btn-outline-success">Редактировать</button>
         </form>
     )
   }
