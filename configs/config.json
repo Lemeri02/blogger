@@ -1,4 +1,4 @@
 {
-  "mongoURL": "mongodb://newbie:123321@79.143.31.227/newusers",
-  "key": "key"
+  "mongoURL": "mongodb+srv://MyAdminUser:kAt9iTcSwJ9ELfEG@cluster0-psx8t.mongodb.net/test?retryWrites=true&w=majority",
+  "key": "mYsecreTkeY"
 }
